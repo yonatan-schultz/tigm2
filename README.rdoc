@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A game manager for setting up games of Twilight Imperium 3. Currently allows you to log in and create games. 
+== TODO
 
-Things you may want to cover:
+* Create invitations
 
-* Ruby version
+* Allow drafting of races
 
-* System dependencies
+* Map generators
 
-* Configuration
+* Generate custom set up instructions based on optional rules chosen
 
-* Database creation
+* Generate tooltips for races and rules
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Battle odds (might be better to spin into another app)
