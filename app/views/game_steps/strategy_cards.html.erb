@@ -1,0 +1,33 @@
+
+<%= form_for @game, :url => wizard_path do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <% i=[*1..8].each do |v| %>
+    <div>
+      <h2><%= v %></h2>
+
+      <% @game.select_strategy_cards.each do |key, value| %>
+         <% if value == v %>
+              <%= f.label key %>
+              <%= radio_button_tag "game[strategy_cards][#{v}]", key  %>
+         <% end %>
+     <% end %>
+
+    </div>
+  <% end %>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

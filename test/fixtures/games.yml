@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shattered_empire: false
+  shards_of_the_throne: false
+  number_of_players: 1
+  races: MyString
+  rules: MyString
+  strategy_cards: MyString
+  players: MyString
+
+two:
+  shattered_empire: false
+  shards_of_the_throne: false
+  number_of_players: 1
+  races: MyString
+  rules: MyString
+  strategy_cards: MyString
+  players: MyString

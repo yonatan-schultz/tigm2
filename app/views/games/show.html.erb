@@ -1,0 +1,54 @@
+
+
+<p>
+  <strong>Shattered empire:</strong>
+  <%= @game.shattered_empire %>
+</p>
+
+<p>
+  <strong>Shards of the throne:</strong>
+  <%= @game.shards_of_the_throne %>
+</p>
+
+<p>
+  <strong>Number of players:</strong>
+  <%= @game.number_of_players %>
+</p>
+
+<p>
+  <strong>Races:</strong>
+  <%= @game.races %>
+</p>
+
+<p>
+  <strong>Rules:</strong>
+  <%= @game.rules %>
+</p>
+
+<p>
+  <strong>Strategy cards:</strong>
+  <%= @game.strategy_cards %>
+</p>
+
+<p>
+  <strong>Players:</strong>
+  <%= @game.players %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @game.address %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @game.date_and_time %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @game.notes %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

@@ -1,0 +1,33 @@
+
+<%= form_for @game, :url => wizard_path do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div>
+<%= f.label(:address) %>
+<%= f.text_field(:address) %>
+</div>
+
+<div>
+  <%= f.label(:date_and_time) %>
+  <%= f.datetime_local_field(:date_and_time) %>
+</div>
+
+<div>
+  <%= f.label(:notes) %>
+  <%= f.text_area(:notes) %>
+</div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
