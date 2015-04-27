@@ -1,39 +1,12 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Games</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Shattered empire</th>
-      <th>Shards of the throne</th>
-      <th>Number of players</th>
-      <th>Races</th>
-      <th>Rules</th>
-      <th>Strategy cards</th>
-      <th>Players</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.shattered_empire %></td>
-        <td><%= game.shards_of_the_throne %></td>
-        <td><%= game.number_of_players %></td>
-        <td><%= game.races %></td>
-        <td><%= game.rules %></td>
-        <td><%= game.strategy_cards %></td>
-        <td><%= game.players %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
+<h2>Games That You Are Hosting</h2>
+<%= render 'showhost' %>
+<br>
+<h2>Games That You Are Have Been Invited To</h2>
+<%= render 'showinvited' %>
 <br>
 
 <%= link_to 'New Game', new_game_path %>

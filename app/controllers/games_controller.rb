@@ -14,7 +14,7 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    @game = current_user.hosted_games.new
   end
 
   # GET /games/1/edit
@@ -24,7 +24,7 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    @game = Game.new(game_params)
+    @game = current_user.hosted_games.new(game_params)
     @game.status = "status"
     respond_to do |format|
       if @game.save

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421184853) do
+ActiveRecord::Schema.define(version: 20150424190755) do
 
   create_table "games", force: :cascade do |t|
     t.boolean  "shattered_empire"
@@ -20,13 +20,21 @@ ActiveRecord::Schema.define(version: 20150421184853) do
     t.string   "races"
     t.string   "rules"
     t.string   "strategy_cards"
-    t.string   "players"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "address"
     t.text     "notes"
     t.datetime "date_and_time"
     t.string   "status"
+    t.integer  "host_id"
+  end
+
+  create_table "played_games", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.boolean  "rsvp",       default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|

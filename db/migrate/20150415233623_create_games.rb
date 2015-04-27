@@ -7,7 +7,6 @@ class CreateGames < ActiveRecord::Migration
       t.string :races
       t.string :rules
       t.string :strategy_cards
-      t.string :players
 
       t.timestamps null: false
     end

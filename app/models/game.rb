@@ -1,5 +1,9 @@
 class Game < ActiveRecord::Base
 
+	belongs_to :host, class_name: 'User'
+	has_many :played_games
+	has_many :users, :through => :played_games
+
 	validates :number_of_players, :presence => true
 	validate :must_have_enough_races, :if => :active_or_races?
 	validate :must_have_eight_strategy_cards, :if => :active_or_strategy_cards?
