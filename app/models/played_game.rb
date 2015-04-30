@@ -1,7 +1,7 @@
 class PlayedGame < ActiveRecord::Base
 
-	validates :user, :game => {:scope => :user}
-	
+	validates_uniqueness_of :user, :game => {:scope => :user}
+
 	belongs_to :user
 	belongs_to :game
 #	attr_accessible :rsvp #boolean
