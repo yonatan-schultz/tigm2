@@ -12,20 +12,16 @@
   </thead>
 
   <tbody>
-    <% current_user.played_games.each do |game| %>
-      <% if game.rsvp = false %>
+    <% current_user.played_games.all.each do |played_game| %>
       <tr>
-        <td><%= game.shattered_empire %></td>
-        <td><%= game.shards_of_the_throne %></td>
-        <td><%= game.number_of_players %></td>
-        <td><%= game.races %></td>
-        <td><%= game.rules %></td>
-        <td><%= game.strategy_cards %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= played_game.game.shattered_empire %></td>
+        <td><%= played_game.game.shards_of_the_throne %></td>
+        <td><%= played_game.game.number_of_players %></td>
+        <td><%= played_game.game.races %></td>
+        <td><%= played_game.game.rules %></td>
+        <td><%= played_game.game.strategy_cards %></td>
+        <td><%= link_to 'Show', played_game.game %></td>
       </tr>
-      <% end %>
     <% end %>
   </tbody>
 </table>

@@ -1,0 +1,17 @@
+<h1>Invite Players</h1>
+
+<%= form_for @played_game do |f| %>
+
+
+  <%= f.select :user_id, User.all.collect {|user| [user.email, user.id]} %>
+  <%= f.hidden_field :game_id %>
+  <%= f.submit "Invite User" %>
+ 		<br /></br />
+
+
+
+<% end %>
+
+<br />
+
+<%= link_to 'Back', games_path %>

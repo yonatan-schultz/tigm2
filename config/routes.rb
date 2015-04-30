@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :games
-
+  resources :played_games
   scope "games/:game_id" do
     resources :game_steps
   end
