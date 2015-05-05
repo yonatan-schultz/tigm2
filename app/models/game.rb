@@ -26,7 +26,6 @@ class Game < ActiveRecord::Base
 	end
 
 	def select_strategy_cards
-		#this should really be a hash Initiative => 1, etc
 		strategy_cards = {"Initiative" => 1, "Diplomacy" => 2, "Political" => 3, "Logistics" => 4, "Trade" => 5, "Warfare" => 6, "Technology" => 7,"Imperial" => 8}
 		if self.shattered_empire == true then strategy_cards.merge!("Leadership" => 1,"Diplomacy II" => 2,"Assembly" => 3,"Production" => 4,"Trade II" => 5,"Warfare II" => 6,"Technology II" => 7,"Bureaucracy" => 8,"Imperial II" =>8) end
 		if self.shards_of_the_throne == true then strategy_cards.merge!("Trade III" => 5,"Political II" => 3,"Assembly II" => 3) end

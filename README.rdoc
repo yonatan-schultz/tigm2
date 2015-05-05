@@ -8,18 +8,19 @@ Currently allows you to:
 * create games
 * invite users
 * rsvp to games and cancel invitations
+* view invited and rsvp'd users
 
 == TODO
 
-* Fix show game page to show invited and rsvp'd users
+* Add name and username to user model
 
 * Once rsvp'd users == number of players:
 	Assign races
 	Assign seating
 
-* Fix validation of played_games. Should force uniqueness on :game_id and :user_id
+* Fix: validation of played_games. Should force uniqueness on :game_id and :user_id
 
-* Fix validation of Strategy Card 8
+* Fix: validation of Strategy Card 8
 
 * Allow drafting of races
 

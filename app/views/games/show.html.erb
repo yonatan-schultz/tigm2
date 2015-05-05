@@ -45,5 +45,30 @@
   <%= @game.notes %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Invited Users</th>
+      <th>Confirmed (RSVP'd) Users</th>
+      <th>Spots Left : <%= @game.number_of_players - @game.played_games.length %></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game.played_games.each do |game| %>
+      <tr>
+        <% if game.rsvp == false %>
+          <td><%= game.user.email %></td>
+          <td></td>
+        <% else %>
+         <td></td>
+         <td><%= game.user.id %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
