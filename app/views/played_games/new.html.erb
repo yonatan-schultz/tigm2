@@ -1,7 +1,17 @@
 <h1>Invite Players</h1>
 
 <%= form_for @played_game do |f| %>
+  <% if @played_game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@played_game.errors.count, "error") %> prohibited this invitation from being sent:</h2>
 
+      <ul>
+      <% @played_game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <%= f.select :user_id, User.all.collect {|user| [user.email, user.id]} %>
   <%= f.hidden_field :game_id %>

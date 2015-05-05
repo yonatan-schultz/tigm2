@@ -1,9 +1,25 @@
 == README
 
-A game manager for setting up games of Twilight Imperium 3. Currently allows you to log in and create games. 
+A game manager for setting up games of Twilight Imperium 3. 
+
+Currently allows you to:
+
+* log in
+* create games
+* invite users
+* rsvp to games and cancel invitations
+
 == TODO
 
-* Create invitations
+* Fix show game page to show invited and rsvp'd users
+
+* Once rsvp'd users == number of players:
+	Assign races
+	Assign seating
+
+* Fix validation of played_games. Should force uniqueness on :game_id and :user_id
+
+* Fix validation of Strategy Card 8
 
 * Allow drafting of races
 

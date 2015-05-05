@@ -1,4 +1,6 @@
 class PlayedGamesController < ApplicationController
+  before_action :set_played_game, only: [:show, :edit, :update, :destroy]
+
   def new
     @played_game = PlayedGame.new
     @played_game.game_id = params[:game_id]
@@ -10,7 +12,7 @@ class PlayedGamesController < ApplicationController
   def edit
   end
  
-   def create
+  def create
     @played_game = PlayedGame.new(played_game_params)
     respond_to do |format|
       if @played_game.save
@@ -23,7 +25,7 @@ class PlayedGamesController < ApplicationController
     end
   end
 
-    def update
+  def update
     respond_to do |format|
       if @played_game.update(played_game_params)
         format.html { redirect_to @played_game, notice: 'Invitation was successfully updated.' }
@@ -47,8 +49,11 @@ class PlayedGamesController < ApplicationController
 
   private
 
+    def set_played_game
+      @played_game = PlayedGame.find(params[:id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def played_game_params
-      params.require(:played_game).permit(:game_id,:user_id)
+      params.require(:played_game).permit(:game_id,:user_id,:rsvp)
     end
  end
