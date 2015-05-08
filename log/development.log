@@ -13850,3 +13850,958 @@ Processing by Users::RegistrationsController#edit as HTML
   Rendered users/registrations/edit.html.erb within layouts/application (8.0ms)
 Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.2ms)
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+
+
+Started GET "/" for ::1 at 2015-05-08 09:42:05 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 4]]
+  Rendered games/_showhost.html.erb (2.4ms)
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?  [["user_id", 4]]
+  Rendered games/_showrsvp.html.erb (3.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered games/_showinvited.html.erb (0.4ms)
+  Rendered games/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 56ms (Views: 34.1ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-05-08 09:42:07 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"94NrnoXXd6l1k/kPOIVT8TgB96ilKWf3BC0U/8tVR9QTw5Wcyyqk3N7pcM3PN8EaDeFBMV7uCZb4g43KCbw42A=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 09:42:07 -0700
+Processing by GamesController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for ::1 at 2015-05-08 09:42:07 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-05-08 09:42:11 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+1K9ljfmQX0mLX7L6lCZ1M+aTQQnMXd7NU2hvvlLRIheKl6D1ou5nPYJ9pVHyZMvHkLUlv2PR4hEAT/sWnWR9Q==", "user"=>{"email"=>"a@c.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "a@c.com"]]
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+1K9ljfmQX0mLX7L6lCZ1M+aTQQnMXd7NU2hvvlLRIheKl6D1ou5nPYJ9pVHyZMvHkLUlv2PR4hEAT/sWnWR9Q==", "user"=>{"email"=>"a@c.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 90ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-05-08 09:42:14 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VfYyOJKtoY1xkqiLUHT1Y3NSKzH4YaJRj1KJxFPUoHPwjtEtc8BZbKG2INX97f+YooqyoyLfkqL+HheW8Op1Dg==", "user"=>{"email"=>"a@n.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VfYyOJKtoY1xkqiLUHT1Y3NSKzH4YaJRj1KJxFPUoHPwjtEtc8BZbKG2INX97f+YooqyoyLfkqL+HheW8Op1Dg==", "user"=>{"email"=>"a@n.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-05-08 09:42:19 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WCfTzRVcrzVdcSlLFMTubxhmYFW9Qf4K7Bsl+D1V6Tf9XzDY9DFX1I1VoRW5XeSUyb75x2f/zvmdV7uqnms8Sg==", "user"=>{"email"=>"a@b.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "a@b.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-05-04 17:48:01.290586"], ["current_sign_in_at", "2015-05-08 16:42:19.373656"], ["sign_in_count", 4], ["updated_at", "2015-05-08 16:42:19.374661"], ["id", 1]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 09:42:19 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 1]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mPlayedGame Load (0.0ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 4]]
+  Rendered games/_showhost.html.erb (12.3ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered games/_showinvited.html.erb (0.4ms)
+  Rendered games/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/played_games/new?game_id=3" for ::1 at 2015-05-08 09:42:22 -0700
+Processing by PlayedGamesController#new as HTML
+  Parameters: {"game_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered played_games/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/played_games" for ::1 at 2015-05-08 09:42:26 -0700
+Processing by PlayedGamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yorVc+WWuscvQRZPXd+bRPgDxsw9l0i59OPfue82zCTcQZldY7fKkJrcJ+2l9hj83eS8spy3TNTmYLYR5zhxaw==", "played_game"=>{"user_id"=>"4", "game_id"=>"3"}, "commit"=>"Invite User"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayedGame Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "played_games" WHERE ("played_games"."user_id" = 4 AND "played_games"."rsvp" = 'f' AND "played_games"."game_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "played_games" ("game_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["game_id", 3], ["user_id", 4], ["created_at", "2015-05-08 16:42:26.185611"], ["updated_at", "2015-05-08 16:42:26.185611"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/played_games/7
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/played_games/7" for ::1 at 2015-05-08 09:42:26 -0700
+Processing by PlayedGamesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered played_games/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for ::1 at 2015-05-08 09:42:27 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 1]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mPlayedGame Load (0.0ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 4]]
+  Rendered games/_showhost.html.erb (3.2ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered games/_showinvited.html.erb (0.3ms)
+  Rendered games/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/played_games/new?game_id=3" for ::1 at 2015-05-08 09:42:29 -0700
+Processing by PlayedGamesController#new as HTML
+  Parameters: {"game_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered played_games/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/played_games" for ::1 at 2015-05-08 09:42:32 -0700
+Processing by PlayedGamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JKxp1e23OUTxYjf9gLObiflw+99b/wyZ9ym9XZEwck8yZyX7a5ZJE0T/Bl94mhgx3JeBofrfCPTlqtT1mT7PAA==", "played_game"=>{"user_id"=>"4", "game_id"=>"3"}, "commit"=>"Invite User"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayedGame Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "played_games" WHERE ("played_games"."user_id" = 4 AND "played_games"."rsvp" = 'f' AND "played_games"."game_id" = 3) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered played_games/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for ::1 at 2015-05-08 09:42:34 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 1]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 4]]
+  Rendered games/_showhost.html.erb (12.5ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (1.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered games/_showinvited.html.erb (0.4ms)
+  Rendered games/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-05-08 09:42:36 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GjTOco5uGj4X8rp4p9cYMGR8V6beA2yssSjyqL6OVu4M/4JcCE9qaaJvi9pf/puIQZst2H8jaMGjq5sAtoDroQ=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 09:42:36 -0700
+Processing by GamesController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for ::1 at 2015-05-08 09:42:36 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-05-08 09:42:41 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OnzZZL80XaTuohd9uaoicptZQKxtXB+VgRXYWf5lE0s05S3RiyTTHV6KQn8UTO/RzJi8hMz0OnqJEhJUJrlxNw==", "user"=>{"email"=>"d@c.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "d@c.com"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2015-05-08 16:42:41.199078"], ["sign_in_count", 2], ["updated_at", "2015-05-08 16:42:41.200900"], ["id", 4]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 74ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 09:42:41 -0700
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT "games".* FROM "games" WHERE "games"."host_id" = ?  [["host_id", 4]]
+  Rendered games/_showhost.html.erb (0.6ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered games/_showrsvp.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?  [["user_id", 4]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered games/_showinvited.html.erb (1.2ms)
+  Rendered games/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/played_games/7/edit" for ::1 at 2015-05-08 09:42:43 -0700
+Processing by PlayedGamesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mPlayedGame Load (0.0ms)[0m  [1mSELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered played_games/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/played_games/7" for ::1 at 2015-05-08 09:42:45 -0700
+Processing by PlayedGamesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"td+0//6VARMe0/FdfQngut3NEUCPxWkEao0lW8xYG2SV9dmRcbot5Ej0L2VMWd9d0s22Me6REOXpZMtUuKERkg==", "played_game"=>{"rsvp"=>"1"}, "commit"=>"RSVP", "id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mPlayedGame Load (0.0ms)[0m  [1mSELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mPlayedGame Exists (0.1ms)[0m  SELECT  1 AS one FROM "played_games" WHERE ("played_games"."user_id" = 4 AND "played_games"."id" != 7 AND "played_games"."rsvp" = 't' AND "played_games"."game_id" = 3) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "played_games" SET "rsvp" = ?, "updated_at" = ? WHERE "played_games"."id" = ?[0m  [["rsvp", "t"], ["updated_at", "2015-05-08 16:42:45.050930"], ["id", 7]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/played_games/7
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/played_games/7" for ::1 at 2015-05-08 09:42:45 -0700
+Processing by PlayedGamesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered played_games/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/games" for ::1 at 2015-05-08 09:42:49 -0700
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT "games".* FROM "games" WHERE "games"."host_id" = ?  [["host_id", 4]]
+  Rendered games/_showhost.html.erb (0.8ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered games/_showinvited.html.erb (0.3ms)
+  Rendered games/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-05-08 09:43:07 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4eLn/laj/mWTcxVSCqKLnZFuFJqnbz9ctBN9oF2suDrByIqQ2YzSksVUy2o78rR6nm6z68Y7Rr03+pOvKVWyzA=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 09:43:07 -0700
+Processing by GamesController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for ::1 at 2015-05-08 09:43:07 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-05-08 09:43:14 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"10DobzSGRPYskEYwqz+lyfV896+AjorkCWOrL7nFIYrgywFqr/MN5vfQJcx9mBqZryJL27GMd3NPKQ68sj1Vvw==", "user"=>{"email"=>"a@c.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "a@c.com"]]
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"10DobzSGRPYskEYwqz+lyfV896+AjorkCWOrL7nFIYrgywFqr/MN5vfQJcx9mBqZryJL27GMd3NPKQ68sj1Vvw==", "user"=>{"email"=>"a@c.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 95ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-05-08 09:43:24 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3dMSIwdxKugHWhPuKzzQu/76UHLCYBt6rRt47N/FaW/qWPsmnARj+NwacBL9m2/rpKTsBvNi5u3rUd1/1D0dWg==", "user"=>{"email"=>"a@b.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "a@b.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-05-08 16:42:19.373656"], ["current_sign_in_at", "2015-05-08 16:43:24.069133"], ["sign_in_count", 5], ["updated_at", "2015-05-08 16:43:24.070111"], ["id", 1]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 73ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 09:43:24 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 1]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mPlayedGame Load (0.0ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 4]]
+  Rendered games/_showhost.html.erb (16.1ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (4.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered games/_showinvited.html.erb (0.6ms)
+  Rendered games/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 62ms (Views: 56.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/played_games/new?game_id=3" for ::1 at 2015-05-08 09:43:26 -0700
+Processing by PlayedGamesController#new as HTML
+  Parameters: {"game_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered played_games/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/played_games" for ::1 at 2015-05-08 09:43:29 -0700
+Processing by PlayedGamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kcexf7j7jTq0d6g1jIU1yRWrMdBkWFar5L1g2DUboEBpz2V8FlaqEQFwoH3xCJwlWPyhcjVj+eW1Xi5XURbKlA==", "played_game"=>{"user_id"=>"4", "game_id"=>"3"}, "commit"=>"Invite User"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayedGame Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "played_games" WHERE ("played_games"."user_id" = 4 AND "played_games"."rsvp" = 'f' AND "played_games"."game_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "played_games" ("game_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["game_id", 3], ["user_id", 4], ["created_at", "2015-05-08 16:43:29.401641"], ["updated_at", "2015-05-08 16:43:29.401641"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/played_games/8
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/played_games/8" for ::1 at 2015-05-08 09:43:29 -0700
+Processing by PlayedGamesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered played_games/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-05-08 09:43:31 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zGPkA4NxeVwZJbMMNEcjODX6jpSZkAxE60/8wXecNfqMazAALdxed6wiu0RJyorUeK0eNsirowq6rLJOE5FfLg=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 09:43:31 -0700
+Processing by GamesController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for ::1 at 2015-05-08 09:43:31 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-05-08 09:43:35 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ISCT3HPBfSwyOyjQraZlrU5jZW3bWKZUlW7itHMoSHWW/oakeCWRBGpjZXrw0ZGyN8QVF1ij0GwNWfaAtIpaCg==", "user"=>{"email"=>"d@c.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "d@c.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-05-08 16:42:41.199078"], ["current_sign_in_at", "2015-05-08 16:43:35.825778"], ["sign_in_count", 3], ["updated_at", "2015-05-08 16:43:35.827046"], ["id", 4]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 71ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 09:43:35 -0700
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT "games".* FROM "games" WHERE "games"."host_id" = ?  [["host_id", 4]]
+  Rendered games/_showhost.html.erb (0.8ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (1.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showinvited.html.erb (1.1ms)
+  Rendered games/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/played_games/8/edit" for ::1 at 2015-05-08 09:43:40 -0700
+Processing by PlayedGamesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mPlayedGame Load (0.0ms)[0m  SELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered played_games/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/played_games/8" for ::1 at 2015-05-08 09:43:42 -0700
+Processing by PlayedGamesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46+8Chsi02o8UNrKqoVJ0Xf2HpzA4JHikCA9xuy2dQ6jwTSm7WbcinhZ0leku9+zB/+SWks2+QQDI/v1GWNueQ==", "played_game"=>{"rsvp"=>"1"}, "commit"=>"RSVP", "id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mPlayedGame Load (0.0ms)[0m  SELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPlayedGame Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "played_games" WHERE ("played_games"."user_id" = 4 AND "played_games"."id" != 8 AND "played_games"."rsvp" = 't' AND "played_games"."game_id" = 3) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered played_games/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/played_games/8" for ::1 at 2015-05-08 09:43:45 -0700
+Processing by PlayedGamesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u7kUar4yPnDR4tayZaTsr8o/22sWR09idB9LRGggrh7715zGSHYxkJXr3i9rmnrNujZXrZ2RJ4TnHI13nfW1aQ==", "id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mPlayedGame Load (0.0ms)[0m  SELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "played_games" WHERE "played_games"."id" = ?  [["id", 8]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/games
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/games" for ::1 at 2015-05-08 09:43:45 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 4]]
+  Rendered games/_showhost.html.erb (0.6ms)
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?  [["user_id", 4]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (1.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?  [["user_id", 4]]
+  Rendered games/_showinvited.html.erb (0.3ms)
+  Rendered games/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT  "games".* FROM "games"  ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1mSELECT  "games".* FROM "games"  ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-05-08 10:48:38 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sGjXmSbeGoammg5kPwRE0l8R7PUADZHVdMyPy5lNE6HwBl810JoVZuKTBvkxOtKwLxhgM4vb+TPnz0n4bJgI1g=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 10:48:38 -0700
+Processing by GamesController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for ::1 at 2015-05-08 10:48:38 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-05-08 10:48:42 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uoukhOwKJOH0KpM86pnX/4LUtCOxCLlxxHuOTJKIQIp3dX4WJG8AYifq+k3wLXu0qcDZkhtNCbMxlpJ3kr1mTA==", "user"=>{"email"=>"a@b.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "a@b.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-05-08 16:43:24.069133"], ["current_sign_in_at", "2015-05-08 17:48:42.932510"], ["sign_in_count", 6], ["updated_at", "2015-05-08 17:48:42.933498"], ["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 76ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 10:48:42 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 1]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mPlayedGame Load (0.0ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 4]]
+  Rendered games/_showhost.html.erb (16.0ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (3.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered games/_showinvited.html.erb (0.6ms)
+  Rendered games/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 60ms (Views: 48.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/played_games/new?game_id=3" for ::1 at 2015-05-08 10:48:46 -0700
+Processing by PlayedGamesController#new as HTML
+  Parameters: {"game_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered played_games/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/played_games" for ::1 at 2015-05-08 10:48:48 -0700
+Processing by PlayedGamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NdG9STuhPjTSI7asEE4jXlRNnfVEEOtAVweysZ0uc7Fq2/bS/CwsYB4MS+9TfrowP4ktOLeXsireqbD/p2lbKg==", "played_game"=>{"user_id"=>"1", "game_id"=>"3"}, "commit"=>"Invite User"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayedGame Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "played_games" WHERE ("played_games"."user_id" = 1 AND "played_games"."rsvp" = 'f' AND "played_games"."game_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "played_games" ("game_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["game_id", 3], ["user_id", 1], ["created_at", "2015-05-08 17:48:48.204296"], ["updated_at", "2015-05-08 17:48:48.204296"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/played_games/9
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/played_games/9" for ::1 at 2015-05-08 10:48:48 -0700
+Processing by PlayedGamesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPlayedGame Load (0.2ms)[0m  [1mSELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered played_games/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for ::1 at 2015-05-08 10:48:50 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 1]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mPlayedGame Load (0.0ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 4]]
+  Rendered games/_showhost.html.erb (3.4ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (1.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showinvited.html.erb (1.1ms)
+  Rendered games/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/played_games/9/edit" for ::1 at 2015-05-08 10:48:56 -0700
+Processing by PlayedGamesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered played_games/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/played_games/9" for ::1 at 2015-05-08 10:48:58 -0700
+Processing by PlayedGamesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"X3mS2iARLl0pOpb/ZuuXXllmzOJYVSanZTGDnpoS6m8Ac9lB55w8CeUVa7wl2w4wMqJ8L6vSf83sn4HQoFXC9A==", "id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayedGame Load (0.0ms)[0m  SELECT  "played_games".* FROM "played_games" WHERE "played_games"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "played_games" WHERE "played_games"."id" = ?  [["id", 9]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/games
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/games" for ::1 at 2015-05-08 10:48:58 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 1]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 4]]
+  Rendered games/_showhost.html.erb (4.6ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (1.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered games/_showinvited.html.erb (0.5ms)
+  Rendered games/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/played_games/new?game_id=3" for ::1 at 2015-05-08 10:49:17 -0700
+Processing by PlayedGamesController#new as HTML
+  Parameters: {"game_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 11ms
+
+ArgumentError (You need to supply at least one validation):
+  app/models/played_game.rb:4:in `<class:PlayedGame>'
+  app/models/played_game.rb:1:in `<top (required)>'
+  app/controllers/played_games_controller.rb:5:in `new'
+
+
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.6ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (60.0ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (133.9ms)
+
+
+Started GET "/played_games/new?game_id=3" for ::1 at 2015-05-08 10:49:17 -0700
+Processing by PlayedGamesController#new as HTML
+  Parameters: {"game_id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 3ms
+
+ArgumentError (You need to supply at least one validation):
+  app/models/played_game.rb:4:in `<class:PlayedGame>'
+  app/models/played_game.rb:1:in `<top (required)>'
+  app/controllers/played_games_controller.rb:5:in `new'
+
+
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.8ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.4ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.0ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (93.6ms)
+
+
+Started GET "/games" for ::1 at 2015-05-08 10:50:11 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 1]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 4]]
+  Rendered games/_showhost.html.erb (15.2ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (4.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered games/_showinvited.html.erb (0.6ms)
+  Rendered games/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 70ms (Views: 54.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/game_steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-08 10:50:12 -0700
+
+
+Started GET "/assets/games.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-08 10:50:12 -0700
+
+
+Started GET "/assets/scaffolds.self-7190f65011fff632ba07bb540560ff63e0b29512c50397fb227d19c1fa1d254e.css?body=1" for ::1 at 2015-05-08 10:50:12 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 10:50:12 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 10:50:12 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 10:50:12 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 10:50:12 -0700
+
+
+Started GET "/assets/game_steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-08 10:50:12 -0700
+
+
+Started GET "/assets/games.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-08 10:50:12 -0700
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2015-05-08 10:50:12 -0700
+
+
+Started GET "/played_games/new?game_id=3" for ::1 at 2015-05-08 10:50:13 -0700
+Processing by PlayedGamesController#new as HTML
+  Parameters: {"game_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered played_games/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/played_games" for ::1 at 2015-05-08 10:50:15 -0700
+Processing by PlayedGamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"feYKR8qm5OSPmyTrUj32aj3wLftsb67AOcWFZrQFysoi7EHcDSv2sEO02agRDW8EVjSdNp/o96qwa4cojkLiUQ==", "played_game"=>{"user_id"=>"1", "game_id"=>"3"}, "commit"=>"Invite User"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayedGame Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "played_games" WHERE ("played_games"."user_id" = 1 AND "played_games"."rsvp" = 'f' AND "played_games"."game_id" = 3) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError (undefined method `id' for :user:Symbol):
+  app/models/played_game.rb:11:in `dont_invite_host'
+  app/controllers/played_games_controller.rb:18:in `block in create'
+  app/controllers/played_games_controller.rb:17:in `create'
+
+
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.7ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.5ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (92.7ms)
+
+
+Started POST "/played_games" for ::1 at 2015-05-08 10:50:37 -0700
+Processing by PlayedGamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xQLTbtHni0xdprLy6JCWI4nxmmU/QUsVldfj2aDuENWaCJj1FmqZGJGJT7GroA9N4jUqqMzGEn8ceeGXmqk4Tg==", "played_game"=>{"user_id"=>"1", "game_id"=>"3"}, "commit"=>"Invite User"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPlayedGame Exists (0.1ms)[0m  SELECT  1 AS one FROM "played_games" WHERE ("played_games"."user_id" = 1 AND "played_games"."rsvp" = 'f' AND "played_games"."game_id" = 3) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 19ms
+
+NoMethodError (undefined method `host' for :game:Symbol):
+  app/models/played_game.rb:11:in `dont_invite_host'
+  app/controllers/played_games_controller.rb:18:in `block in create'
+  app/controllers/played_games_controller.rb:17:in `create'
+
+
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.2ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (50.9ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/yschultz/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (120.6ms)
+
+
+Started POST "/played_games" for ::1 at 2015-05-08 10:50:54 -0700
+Processing by PlayedGamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xQLTbtHni0xdprLy6JCWI4nxmmU/QUsVldfj2aDuENWaCJj1FmqZGJGJT7GroA9N4jUqqMzGEn8ceeGXmqk4Tg==", "played_game"=>{"user_id"=>"1", "game_id"=>"3"}, "commit"=>"Invite User"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPlayedGame Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "played_games" WHERE ("played_games"."user_id" = 1 AND "played_games"."rsvp" = 'f' AND "played_games"."game_id" = 3) LIMIT 1[0m
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered played_games/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 71ms (Views: 29.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/games" for ::1 at 2015-05-08 10:53:47 -0700
+Processing by GamesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."host_id" = ?[0m  [["host_id", 1]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 1]]
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?[0m  [["game_id", 3]]
+  [1m[35mPlayedGame Load (0.1ms)[0m  SELECT "played_games".* FROM "played_games" WHERE "played_games"."game_id" = ?  [["game_id", 4]]
+  Rendered games/_showhost.html.erb (17.7ms)
+  [1m[36mPlayedGame Load (0.1ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered games/_showrsvp.html.erb (4.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "played_games".* FROM "played_games" WHERE "played_games"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered games/_showinvited.html.erb (0.9ms)
+  Rendered games/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 64ms (Views: 51.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/games/new" for ::1 at 2015-05-08 10:53:53 -0700
+Processing by GamesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered games/_form.html.erb (4.0ms)
+  Rendered games/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/games" for ::1 at 2015-05-08 10:53:56 -0700
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gMSsvIPj0O+X3uP77KQ9MamKbymZl2utkHFEBUky74nfzucnRG7Cu1vxHrivlKRfwk7f5GoQMscZ30ZLc3XHEg==", "game"=>{"shattered_empire"=>"0", "shards_of_the_throne"=>"0", "number_of_players"=>"5"}, "commit"=>"Create Game"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "games" ("shattered_empire", "shards_of_the_throne", "number_of_players", "host_id", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["shattered_empire", "f"], ["shards_of_the_throne", "f"], ["number_of_players", 5], ["host_id", 1], ["status", "status"], ["created_at", "2015-05-08 17:53:56.404386"], ["updated_at", "2015-05-08 17:53:56.404386"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/games/5/game_steps
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/games/5/game_steps" for ::1 at 2015-05-08 10:53:56 -0700
+Processing by GameStepsController#index as HTML
+  Parameters: {"game_id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/games/5/game_steps/races
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/games/5/game_steps/races" for ::1 at 2015-05-08 10:53:56 -0700
+Processing by GameStepsController#show as HTML
+  Parameters: {"game_id"=>"5", "id"=>"races"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered game_steps/races.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/games/5/game_steps/races" for ::1 at 2015-05-08 10:53:57 -0700
+Processing by GameStepsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MdE8CDgsZhomsy84EbEGM6kGEG/nZdG0gchROTuKrAJu23eT/6F0Tuqc0ntSgZ9dwsKgohTiiN4IZlN3Ac2EmQ==", "game"=>{"races"=>["The Emirates of Hacan", "The Universities of Jol-Nar", "The Barony of Letnev", "The Sardakk N'orr", "The Federation of Sol", "The Xxcha Kingdom", "The L1Z1X Mindnet", "The Mentak Coalition", "The Naalu Colletive", "The Yssaril Tribes"]}, "commit"=>"Update Game", "game_id"=>"5", "id"=>"races"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.0ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "games" SET "status" = ?, "races" = ?, "updated_at" = ? WHERE "games"."id" = ?[0m  [["status", "races"], ["races", "[\"The Emirates of Hacan\", \"The Universities of Jol-Nar\", \"The Barony of Letnev\", \"The Sardakk N'orr\", \"The Federation of Sol\", \"The Xxcha Kingdom\", \"The L1Z1X Mindnet\", \"The Mentak Coalition\", \"The Naalu Colletive\", \"The Yssaril Tribes\"]"], ["updated_at", "2015-05-08 17:53:57.987582"], ["id", 5]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/games/5/game_steps/rules
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/games/5/game_steps/rules" for ::1 at 2015-05-08 10:53:57 -0700
+Processing by GameStepsController#show as HTML
+  Parameters: {"game_id"=>"5", "id"=>"rules"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered game_steps/rules.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/games/5/game_steps/rules" for ::1 at 2015-05-08 10:54:03 -0700
+Processing by GameStepsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Z/6x0q/W7ZzaqTVWI6LPScNUVgRSrStyKkBkjjEB46+lbFcjTJJ4r9FWZYbvhJTTMnhleLN7cdBBwPcAoMvFQ==", "game"=>{"rules"=>["The Long War", "Distant Suns", "Leaders", "Sabotage Runs"]}, "commit"=>"Update Game", "game_id"=>"5", "id"=>"rules"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mGame Load (0.0ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "games" SET "status" = ?, "rules" = ?, "updated_at" = ? WHERE "games"."id" = ?  [["status", "rules"], ["rules", "[\"The Long War\", \"Distant Suns\", \"Leaders\", \"Sabotage Runs\"]"], ["updated_at", "2015-05-08 17:54:03.748299"], ["id", 5]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/games/5/game_steps/strategy_cards
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/games/5/game_steps/strategy_cards" for ::1 at 2015-05-08 10:54:03 -0700
+Processing by GameStepsController#show as HTML
+  Parameters: {"game_id"=>"5", "id"=>"strategy_cards"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered game_steps/strategy_cards.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/games/5/game_steps/strategy_cards" for ::1 at 2015-05-08 10:54:14 -0700
+Processing by GameStepsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EDSw2fqOaqarIQXX3bUx7dOHK/EwfxQuX4BHaNL78HtPPvtCPQN48mcO+JSehaiDuEObPMP4TUTWLkUm6LzY4A==", "game"=>{"strategy_cards"=>{"1"=>"Initiative", "2"=>"Diplomacy", "3"=>"Political", "4"=>"Logistics", "5"=>"Trade", "6"=>"Warfare", "7"=>"Technology", "8"=>"Imperial"}}, "commit"=>"Update Game", "game_id"=>"5", "id"=>"strategy_cards"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered game_steps/strategy_cards.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 34ms (Views: 28.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/games/5/game_steps/strategy_cards" for ::1 at 2015-05-08 10:55:56 -0700
+Processing by GameStepsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g/fy4I5GdBAh4jG6oVPK3XvAino3c9tEeBBwRtHMhUrc/bl7SctmRO3NzPniY1OzEAQ6t8T0gi7xvnII64ut0Q==", "game"=>{"strategy_cards"=>{"1"=>"Initiative", "2"=>"Diplomacy", "3"=>"Political", "4"=>"Logistics", "5"=>"Trade", "6"=>"Warfare", "7"=>"Technology", "8"=>"Imperial"}}, "commit"=>"Update Game", "game_id"=>"5", "id"=>"strategy_cards"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "games" SET "status" = ?, "strategy_cards" = ?, "updated_at" = ? WHERE "games"."id" = ?[0m  [["status", "strategy_cards"], ["strategy_cards", "{\"1\"=>\"Initiative\", \"2\"=>\"Diplomacy\", \"3\"=>\"Political\", \"4\"=>\"Logistics\", \"5\"=>\"Trade\", \"6\"=>\"Warfare\", \"7\"=>\"Technology\", \"8\"=>\"Imperial\"}"], ["updated_at", "2015-05-08 17:55:56.528585"], ["id", 5]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/games/5/game_steps/location
+Completed 302 Found in 32ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/games/5/game_steps/location" for ::1 at 2015-05-08 10:55:56 -0700
+Processing by GameStepsController#show as HTML
+  Parameters: {"game_id"=>"5", "id"=>"location"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered game_steps/location.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/games/5/game_steps/strategy_cards" for ::1 at 2015-05-08 10:55:58 -0700
+Processing by GameStepsController#show as HTML
+  Parameters: {"game_id"=>"5", "id"=>"strategy_cards"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered game_steps/strategy_cards.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games/5/game_steps/rules" for ::1 at 2015-05-08 10:55:59 -0700
+Processing by GameStepsController#show as HTML
+  Parameters: {"game_id"=>"5", "id"=>"rules"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered game_steps/rules.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/games/5/game_steps/rules" for ::1 at 2015-05-08 10:56:01 -0700
+Processing by GameStepsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qn0SkzcoBa94b4qdCi8HD6Lc8pyx9fifDdh5df99ymYdd1kI8KUX+7RAd95JH55hyRhCUUJyofWEdns7xTri/Q==", "game"=>{"rules"=>["The Long War", "Age Of Empire", "Distant Suns", "Leaders", "Sabotage Runs"]}, "commit"=>"Update Game", "game_id"=>"5", "id"=>"rules"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "games" SET "status" = ?, "rules" = ?, "updated_at" = ? WHERE "games"."id" = ?  [["status", "rules"], ["rules", "[\"The Long War\", \"Age Of Empire\", \"Distant Suns\", \"Leaders\", \"Sabotage Runs\"]"], ["updated_at", "2015-05-08 17:56:01.697536"], ["id", 5]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/games/5/game_steps/strategy_cards
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/games/5/game_steps/strategy_cards" for ::1 at 2015-05-08 10:56:01 -0700
+Processing by GameStepsController#show as HTML
+  Parameters: {"game_id"=>"5", "id"=>"strategy_cards"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered game_steps/strategy_cards.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.2ms)

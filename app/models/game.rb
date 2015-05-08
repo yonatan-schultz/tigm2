@@ -62,7 +62,7 @@ class Game < ActiveRecord::Base
 	## Must choose a strat which allows objectives to get out unless has selected Age of Empirere
     ## Means imperial, bureaucracy
     	errors.add(:strategy_cards, "you must select a strategy card which allows you to get objectives onto the table (Imperial or Bureaucracy) unless playing with Age of Empire optional rule.") unless
-  			strategy_cards.include?("Imperial II") || strategy_cards.include?("Bureaucracy") || rules.include?("Age of Empire")  		
+  			strategy_cards.include?("Imperial") || strategy_cards.include?("Bureaucracy") || rules.include?("Age of Empire")  		
 	end
 
 	def playing_with_mercs?
