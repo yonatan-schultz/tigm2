@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations"}
   resources :games
   resources :played_games
   scope "games/:game_id" do
