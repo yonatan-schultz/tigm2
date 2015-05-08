@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'twitter-bootstrap-rails'
 #use devise for authentication
 gem 'devise'
 #Use wicked to make a new game wizard
