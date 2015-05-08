@@ -18,6 +18,8 @@ Currently allows you to:
 	Assign races
 	Assign seating
 
+* Delete invitations from show page
+
 * Fix: validation of played_games. Should force uniqueness on :game_id and :user_id
 
 * Fix: validation of Strategy Card 8
