@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150508160946) do
+ActiveRecord::Schema.define(version: 20150508205113) do
 
   create_table "games", force: :cascade do |t|
     t.boolean  "shattered_empire"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20150508160946) do
     t.boolean  "rsvp",       default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "race"
+    t.integer  "seat"
   end
 
   create_table "users", force: :cascade do |t|
