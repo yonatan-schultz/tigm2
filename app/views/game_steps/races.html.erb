@@ -1,4 +1,4 @@
-
+<h1>Select Your Races</h1>
 <%= form_for @game, :url => wizard_path do |f| %>
   <% if @game.errors.any? %>
     <div id="error_explanation">
@@ -14,7 +14,7 @@
 
   <div>
   <% @game.select_races.each do |a| %>
- 		<%= f.label a %>
+  <a href="#" target="_blank" data-image-url="<%= image_path(a.split(' ').join+'.jpg') %>" class="preview" rel="popover"><%= f.label a %></a>
  		<%= check_box_tag 'game[races][]', a , true %>
   <% end %>
   </div>
@@ -23,3 +23,12 @@
     <%= f.submit %>
   </div>
 <% end %>
+<script>
+$('.preview').popover({
+    'trigger':'hover',
+    'html':true,
+    'content':function(){
+        return "<img src='"+$(this).data('imageUrl')+"'>";
+    }
+});
+</script>

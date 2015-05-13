@@ -1,4 +1,6 @@
+<% rules = YAML.load_file("#{Rails.root}/config/rules.yml") %>
 
+<h1>Select Optional Rules</h1>
 <%= form_for @game, :url => wizard_path do |f| %>
   <% if @game.errors.any? %>
     <div id="error_explanation">
@@ -14,7 +16,7 @@
 
   <div>
   <% @game.select_rules.each do |a| %>
- 		<%= f.label a %>
+ 		<a href="#" data-toggle="popover" title="<%= a %>" data-content="<%= rules[a] %>"><%= f.label a %></a>
  		<%= check_box_tag 'game[rules][]', a , true %>
   <% end %>
   </div>
@@ -23,3 +25,9 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+$(function () {
+  $('[data-toggle="popover"]').popover({trigger:'hover',html:true});
+})
+</script>
