@@ -1,4 +1,5 @@
 
+<h1>Select Your Strategy Cards</h1>
 <%= form_for @game, :url => wizard_path do |f| %>
   <% if @game.errors.any? %>
     <div id="error_explanation">
@@ -18,7 +19,7 @@
 
       <% @game.select_strategy_cards.each do |key, value| %>
          <% if value == v %>
-              <%= f.label key %>
+              <a href="#" target="_blank" data-image-url="<%= image_path(key.split(' ').join+'.jpg') %>" class="preview" rel="popover"><%= f.label key %></a>
               <%= radio_button_tag "game[strategy_cards][#{v}]", key  %>
          <% end %>
      <% end %>
@@ -31,3 +32,12 @@
     <%= f.submit %>
   </div>
 <% end %>
+<script>
+$('.preview').popover({
+    'trigger':'hover',
+    'html':true,
+    'content':function(){
+        return "<img src='"+$(this).data('imageUrl')+"'>";
+    }
+});
+</script>
